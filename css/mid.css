@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -8,6 +13,10 @@ body{
     background-color: black;
 
     font-family: "Redaction 50", serif;
+}
+
+.burger {
+    display: none;
 }
 
 ::selection{
@@ -399,9 +408,42 @@ footer{
 }
 
 
-/* 手機：上下堆疊，取消等高與左右交替 */
-@media (max-width:768px){
+/*RWD*/
+@media screen and (max-width: 768px) {
     .details{ grid-auto-rows:auto; }
     .details article{ grid-template-columns:1fr; }
     .details > a:nth-of-type(even) .a_left{ order:0; }
+
+
+    .burger {
+        display: block;
+        background-color: transparent;
+        color: rgba(255, 99, 143);
+        font-size: 35px;
+        position: absolute;
+        top: 15px;
+        left:20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    nav {
+        display: none;
+    }
+
+    
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+
+    .logo img {
+        transform-origin: center center; /* 以圖片中心點縮放 */
+    }
+
+    
+
 }
