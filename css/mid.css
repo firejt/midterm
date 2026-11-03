@@ -145,7 +145,6 @@ section > p{
     flex:0 0 100%;
 }
 
-/* ===== More details 區塊 ===== */
 .details{
     display:grid;                 /* 覆蓋掉 section 的 flex，改用 grid 排版 */
     grid-template-rows:auto;      /* 第一列（h1）依內容高度 */
@@ -444,6 +443,96 @@ footer{
         transform-origin: center center; /* 以圖片中心點縮放 */
     }
 
+    .hero{
+    position: relative;   
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient(to bottom, #000000, #fe4db4);
+    }
+
+    .hero h1{
+        font-size:2.5rem; color:rgba(255, 185, 205);
+    }
+    .hero h2{
+        font-size: 1em; color:rgb(253, 253, 253);
+        top:45%;
+    }
+
+    /*section*/
+section{
+   
+    display:flex;
+    flex-wrap: wrap;
+    gap:40px;
+
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+section h1{
+    font-size: 2rem;
+    color:rgba(255, 99, 143);
+    text-align: center;
     
+    flex:0 0 100%;
+}
+
+section > p{
+    color:white;
+    text-align:center;
+    flex:0 0 100%;
+    font-size: 0.8rem;
+}
+
+.card{
+    flex: 0 0 calc((100% - 40px *3)/2);
+    position: relative; 
+
+	text-align:center;
+	cursor:pointer;
+}
+
+.card h2{
+    font-size: 2rem;
+}
+
+.card p{
+    font-size: 0.8rem;
+}
+
+.a_right p{
+    text-align:left;
+    font-size: 0.8rem;
+}
+
+.newsletter{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter p{
+    margin-botttom: 0px;
+    font-size: 0.8em;
+}
+
+.newsletter input, .newsletter button{
+    padding: 10px;
+}
+
+.newsletter input{
+    width:20vw;
+    hight:30vh;
+    margin-right: 10px;
+}
+
+.newsletter button{
+    width:60px;
+}
+
+
+
 
 }
