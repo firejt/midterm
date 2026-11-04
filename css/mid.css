@@ -66,7 +66,6 @@ header{
 
 /*nav*/
 nav{
-    /*float: right;*/
     flex:1;
     text-align: right;
 }
@@ -146,9 +145,9 @@ section > p{
 }
 
 .details{
-    display:grid;                 /* 覆蓋掉 section 的 flex，改用 grid 排版 */
-    grid-template-rows:auto;      /* 第一列（h1）依內容高度 */
-    grid-auto-rows:1fr;           /* 之後每個 <a> 自動等高（跟最高的那個一樣） */
+    display:grid;
+    grid-template-rows:auto;
+    grid-auto-rows:1fr;
     gap:40px;
 }
 
@@ -159,40 +158,37 @@ section > p{
 }
 
 .details article{
-    height:100%;                  /* 填滿整列高度 */
+    height:100%;
     display:grid;
-    grid-template-columns:1fr 1fr;  /* 圖片、文字各佔一半 */
+    grid-template-columns:1fr 1fr;
     border:1px solid rgba(255, 99, 143);
     border-radius:20px;
     overflow:hidden;
 }
 
-/* 圖片那一半 */
 .a_left{
     position:relative;
     min-height:240px;
 }
 .a_left img{
     position:absolute;
-    inset:0;                      /* 貼滿整個 a_left */
+    inset:0;
     width:100%;
     height:100%;
-    object-fit:cover;             /* 等比例裁切填滿，不變形 */
+    object-fit:cover;
 }
 
-/* 文字那一半 */
 .a_right{
     padding:30px;
     color:white;
     display:flex;
     flex-direction:column;
-    justify-content:center;       /* 文字在框內垂直置中 */
+    justify-content:center;
 }
 .a_right p{
-    text-align:left;
+    text-align:center;
 }
 
-/* 偶數張把圖片換到右邊：1 左、2 右、3 左、4 右… */
 .details > a:nth-of-type(even) .a_left{
     order:2;
 }
@@ -224,45 +220,42 @@ section > p{
 .ka1{
     position: absolute;
     top: 0;
-    left: 10%;                   /* (100% - 80%) / 2 */
+    left: 10%;
     opacity: 0;
     animation: flash6 6s infinite; 
 }
 .ka2{
     position: absolute;
     top: 0;
-    left: 10%;                   /* (100% - 80%) / 2 */
+    left: 10%;
     opacity: 0;
-    animation: flash6 6s infinite;   /* 預設週期 */
+    animation: flash6 6s infinite;
 }
 .ka3{
     position: absolute;
     top: 0;
-    left: 10%;                   /* (100% - 80%) / 2 */
+    left: 10%;
     opacity: 0;
     animation: flash6 8s infinite; 
 }
 .ka4{
     position: absolute;
     top: 0;
-    left: 10%;                   /* (100% - 80%) / 2 */
+    left: 10%;
     opacity: 0;
     animation: flash6 3s infinite; 
 }
 
-/* 每張卡片不同週期（等待時間 + 1 秒閃爍） */
-.card:nth-of-type(1) .ka2{ animation: flash6   6s   infinite; }  /* 等 5 秒   */
-.card:nth-of-type(2) .ka2{ animation: flash7_5 7.5s infinite; }  /* 等 6.5 秒 */
-.card:nth-of-type(3) .ka2{ animation: flash9   9s   infinite; }  /* 等 8 秒   */
-.card:nth-of-type(4) .ka2{ animation: flash11  11s  infinite; }  /* 等 10 秒  */
+.card:nth-of-type(1) .ka2{ animation: flash6   6s   infinite; }
+.card:nth-of-type(2) .ka2{ animation: flash7_5 7.5s infinite; }
+.card:nth-of-type(3) .ka2{ animation: flash9   9s   infinite; }
+.card:nth-of-type(4) .ka2{ animation: flash11  11s  infinite; }
 
-/* 每個 keyframes 的最後 1 秒 = 顯示圖 2 */
-@keyframes flash6   { 0%,83.3%{opacity:0} 83.4%,100%{opacity:1} }  /* 1/6   */
-@keyframes flash7_5 { 0%,86.6%{opacity:0} 86.7%,100%{opacity:1} }  /* 1/7.5 */
-@keyframes flash9   { 0%,88.8%{opacity:0} 88.9%,100%{opacity:1} }  /* 1/9   */
-@keyframes flash11  { 0%,90.8%{opacity:0} 90.9%,100%{opacity:1} }  /* 1/11  */
+@keyframes flash6   { 0%,83.3%{opacity:0} 83.4%,100%{opacity:1} }
+@keyframes flash7_5 { 0%,86.6%{opacity:0} 86.7%,100%{opacity:1} } 
+@keyframes flash9   { 0%,88.8%{opacity:0} 88.9%,100%{opacity:1} } 
+@keyframes flash11  { 0%,90.8%{opacity:0} 90.9%,100%{opacity:1} }
 
-/* 滑鼠移上去：暫停計時，並強制顯示圖 1 */
 .card:hover .ka2{
     animation-play-state: paused;
     opacity: 0 !important;
