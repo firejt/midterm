@@ -486,7 +486,8 @@ section > p{
 }
 
 .card{
-    flex: 0 0 calc((100% - 40px *3)/2);
+    flex: 0 0 100%;
+    flex-direction: column;
     position: relative; 
 
 	text-align:center;
