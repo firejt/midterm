@@ -280,7 +280,7 @@ section > a:nth-of-type(2n) article{
 }
 
 article:hover{
-    border:solid 8px rgba(255, 99, 143);
+    border:solid 3px rgba(255, 99, 143);
     background:rgba(87, 117, 144, .2);
 }
 
